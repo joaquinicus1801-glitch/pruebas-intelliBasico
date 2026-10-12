@@ -15,12 +15,12 @@
     </properties>
      <!--dependencias, bibliotecas o archivos jar-->
     <dependencies>
-        <dependency>
+        <dependency> <!--Conertir un objeto java a json-->
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.13.2</version>
         </dependency>
-        <dependency>
+        <dependency> <!--Hacer prubas en clases de java , el test forma parte del ciclo de vida de maven-->
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.12.2</version>
