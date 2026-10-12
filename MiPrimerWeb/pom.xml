@@ -23,7 +23,8 @@
     </properties>
     <dependencies>
         <dependency>
-            <!--biblioteca api para que funcione-->
+            <!--biblioteca api para que funcione, los que nos proporciona las clases e interfaces
+             necesarias para  desarrollar servlets-->
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.1.0</version>
