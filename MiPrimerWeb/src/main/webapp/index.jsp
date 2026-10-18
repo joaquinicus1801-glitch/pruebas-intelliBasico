@@ -10,5 +10,18 @@
     <h1>¡Hola desde Tomcat 11!</h1>
     <p>Mi primera aplicación web con Maven e IntelliJ.</p>
     <p>cambio a ver si cambia xd</p>
+
+    <p>aplicando el mvc</p>
+        <p>${mensaje}  </p>
+    <p>mostrara esto en el con response?</p>
+<p>${mensaje1}</p>
+
+<p>esto es de prueba de ruqest y response</p>
+    <p>Request: ${requestScope.nombre}</p>
+
+    <p>Session: ${sessionScope.nombre}</p>
+
+    <p>Sin scope: ${nombre}</p>
+
 </body>
 </html>
