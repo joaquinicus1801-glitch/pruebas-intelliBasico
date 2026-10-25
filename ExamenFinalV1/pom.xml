@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--Configuracion del maven para saber que tipo archivo vamos a generar
+        usaremos un war:
+        los elementos principales de esta manera, conservando el groupId
+        y demás datos que haya generado IntelliJ cuando corresponda:
+    -->
+    <groupId>Jara.company</groupId>
+    <artifactId>ExamenFinalV1</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>  <!--Defino el tipo de empaquetado que tendra en este caso
+     al ser web es war
+    -->
+
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies> <!--dependencias, bibliotecas o archivos jar-->
+    <dependency>
+    <!--biblioteca api para que funcione, los que nos proporciona las clases e interfaces
+           necesarias para  desarrollar servlets-->
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.1.0</version>
+    <scope>provided</scope> <!--El scope es privide significa que solo se usa la compilar
+                   el entorno como tomcat propocione la dependencia necesaria para ejecutar
+            -->
+    </dependency>
+
+        <dependency> <!--Conertir un objeto java a json-->
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.13.2</version>
+        </dependency>
+        <dependency> <!--Hacer prubas en clases de java , el test forma parte del ciclo de vida de maven-->
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.12.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin> <!--se encarga de empaquetar aplicaciones web en archivos WAR, incluyendo clases, recursos y dependencias.-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+            </plugin>
+            <plugin> <!--s el plugin oficial de Maven para ejecutar pruebas unitarias durante la fase test, usando JUnit (4/5), TestNG u otros motores,
+             generando reportes en target/surefire-reports y funcionando desde Maven 3.6.3 y JDK 1.8 en su versión 3.6.0.-->
+                <!--Para que Maven ejecute correctamente las pruebas de JUnit 5, necesita
+           una versión compatible del Maven Surefire Plugin.-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.3</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
